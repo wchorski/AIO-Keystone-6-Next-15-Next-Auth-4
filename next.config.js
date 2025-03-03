@@ -1,9 +1,8 @@
-// you don't need this if you're building something outside of the Keystone repo
-const withPreconstruct = require('@preconstruct/next')
+
 const KEYSTONE_URL = process.env.KEYSTONE_URL || 'http://localhost:4000'
 const Path = require('path')
 
-module.exports = withPreconstruct({
+module.exports = {
 	webpack(config) {
 		config.resolve.alias = {
 			...config.resolve.alias,
@@ -30,4 +29,4 @@ module.exports = withPreconstruct({
 			],
 		}
 	},
-})
+}

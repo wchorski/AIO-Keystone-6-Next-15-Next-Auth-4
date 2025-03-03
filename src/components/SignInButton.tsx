@@ -12,7 +12,7 @@ export default function Component() {
 	return (
 		<>
 			Not signed in <br />
-			<button onClick={() => signIn('auth0')}>Sign in with Auth0</button>
+			<button onClick={() => signIn()}>Sign in with Auth0</button>
 		</>
 	)
 }

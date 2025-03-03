@@ -1,7 +1,7 @@
-import { list } from '@keystone-6/core'
-import { allowAll, denyAll, allOperations } from '@keystone-6/core/access'
-import { text, password, timestamp } from '@keystone-6/core/fields'
-import type { Lists } from '.keystone/types'
+import { list } from "@keystone-6/core"
+import { allowAll, denyAll, allOperations } from "@keystone-6/core/access"
+import { text, password, timestamp } from "@keystone-6/core/fields"
+import type { Lists } from ".keystone/types"
 
 const permissions = {
 	authenticatedUser: ({ session }: any) => !!session?.data,
@@ -24,7 +24,7 @@ export const lists: Lists = {
 			name: text({ validation: { isRequired: true } }),
 			email: text({
 				validation: { isRequired: true },
-				isIndexed: 'unique',
+				isIndexed: "unique",
 				access: {
 					// email only visible to authenticated users
 					read: permissions.authenticatedUser,
@@ -32,15 +32,16 @@ export const lists: Lists = {
 			}),
 			subjectId: text({
 				validation: { isRequired: true },
-				isIndexed: 'unique',
+				isIndexed: "unique",
 				access: {
 					// email only visible to authenticated users
 					read: permissions.authenticatedUser,
 				},
 			}),
+			password: text({ validation: { isRequired: true } }),
 			role: text(),
 			createdAt: timestamp({
-				defaultValue: { kind: 'now' },
+				defaultValue: { kind: "now" },
 			}),
 		},
 	}),

@@ -13,21 +13,27 @@ export default config({
 		url: `file:${dbFilePath}`,
 		onConnect: async (context: Context) => {
 			await seedDemoData(context)
+      
 		},
+    prismaClientPath: "node_modules/.prisma/client",
 	},
 	ui: {
-		getAdditionalFiles: [
-			async () => [
-				{
-					mode: 'copy',
-					inputPath: Path.resolve('./next-config.js'),
-					outputPath: 'next.config.js',
-				},
-			],
-		],
+		// getAdditionalFiles: [
+		// 	async () => [
+		// 		{
+		// 			mode: 'copy',
+		// 			inputPath: Path.resolve('./next-config.js'),
+		// 			outputPath: 'next.config.js',
+		// 		},
+		// 	],
+		// ],
+    isAccessAllowed: () => true,
+    // isAccessAllowed: ({ session }) => session.allowAdminUI,
+    basePath: '/admin',
 	},
 	server: {
 		port: 4000,
 	},
+  
 	lists,
 })

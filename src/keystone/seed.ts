@@ -3,18 +3,21 @@ import type { Context } from '.keystone/types'
 const demoUsers = [
 	{
 		email: 'clark@email.com',
+		password: 'clark@email.com',
 		subjectId: 'auth0|1234',
 		name: 'Clark Kent',
 		role: 'user',
 	},
 	{
 		email: 'josh@test.com',
+		password: 'josh@test.com',
 		subjectId: 'auth0|60d6c72cf50319006c214d5e',
 		name: 'Bruce Wayne',
 		role: 'admin',
 	},
 	{
 		email: 'diana@email.com',
+		password: 'diana@email.com',
 		subjectId: 'auth0|qwer',
 		name: 'Diana Prince',
 		role: 'user',
